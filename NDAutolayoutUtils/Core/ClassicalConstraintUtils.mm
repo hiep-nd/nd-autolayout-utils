@@ -1,12 +1,12 @@
 //
-//  ClassicalConstraintUtil.m
-//  NDAutolayoutUtil
+//  ClassicalConstraintUtils.m
+//  NDAutolayoutUtils
 //
 //  Created by Nguyen Duc Hiep on 2/19/20.
 //  Copyright © 2020 Nguyen Duc Hiep. All rights reserved.
 //
 
-#import "NDAutolayoutUtil/ClassicalConstraintUtil.h"
+#import <NDAutolayoutUtils/ClassicalConstraintUtils.h>
 
 void NDApplyConstraintRatio(CGFloat constraintRatio, id view) {
   NDConstraintRatio(constraintRatio, view).active = YES;

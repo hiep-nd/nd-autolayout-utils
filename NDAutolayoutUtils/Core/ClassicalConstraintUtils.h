@@ -1,6 +1,6 @@
 //
-//  ClassicalConstraintUtil.h
-//  NDAutolayoutUtil
+//  ClassicalConstraintUtils.h
+//  NDAutolayoutUtils
 //
 //  Created by Nguyen Duc Hiep on 2/19/20.
 //  Copyright © 2020 Nguyen Duc Hiep. All rights reserved.

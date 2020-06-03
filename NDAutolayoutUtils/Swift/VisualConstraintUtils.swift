@@ -1,6 +1,6 @@
 //
-//  VisualConstraintUtil.swift
-//  NDAutolayoutUtil
+//  VisualConstraintUtils.swift
+//  NDAutolayoutUtils
 //
 //  Created by Nguyen Duc Hiep on 2/25/20.
 //  Copyright © 2020 Nguyen Duc Hiep. All rights reserved.
@@ -9,7 +9,7 @@
 import UIKit
 
 /// Applies all |visualConstraints| with |metrics|, |ratios| to views  in |views|
-public func apply(
+public func nd_apply(
   visualConstraints: [String]? = nil,
   views: [String: Any],
   metrics: [String: CGFloat]? = nil,
@@ -22,7 +22,7 @@ public func apply(
 
 /// Applies all |visualConstraintWithOptions| with |metrics|, |ratios| to views
 /// in |views|
-public func apply(
+public func nd_apply(
   visualConstraintWithOptions: [String: NSLayoutConstraint.FormatOptions]?,
   views: [String: Any],
   metrics: [String: CGFloat]? = nil,
@@ -36,13 +36,12 @@ public func apply(
 
 /// Returns constraints based on the visual constraint with options described
 /// with |constraints|, |metrics| and |ratios| to views in  |views|.
-public func visual(
+public func nd_visual(
   constraints: [String]? = nil,
   views: [String: Any],
   metrics: [String: CGFloat]? = nil,
   ratios: [String: CGFloat]? = nil
 ) -> [NSLayoutConstraint] {
-
   return __NDVisualConstraintsWithMetricsAndRatios(
     constraints, views,
     metrics as [String: NSNumber]?,
@@ -51,7 +50,7 @@ public func visual(
 
 /// Returns constraints based on the visual constraint with options described
 /// with |constraintWithOptions|, |metrics| and |ratios| to views in  |views|.
-public func visual(
+public func nd_visual(
   constraintWithOptions: [String: NSLayoutConstraint.FormatOptions]? = nil,
   views: [String: Any],
   metrics: [String: CGFloat]? = nil,

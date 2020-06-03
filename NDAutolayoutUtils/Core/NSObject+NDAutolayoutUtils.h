@@ -1,6 +1,6 @@
 //
-//  NSObject+NDAutolayoutUtil.h
-//  NDAutolayoutUtil
+//  NSObject+NDAutolayoutUtils.h
+//  NDAutolayoutUtils
 //
 //  Created by Nguyen Duc Hiep on 3/4/20.
 //  Copyright © 2020 Nguyen Duc Hiep. All rights reserved.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSObject (NDAutolayoutUtil)
+@interface NSObject (NDAutolayoutUtils)
 
 @property(nonatomic, strong, readonly) UILayoutGuide* nd_leadingGuide;
 @property(nonatomic, strong, readonly) UILayoutGuide* nd_trailingGuide;

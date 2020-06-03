@@ -1,16 +1,16 @@
 //
-//  NSObject+NDAutolayoutUtil.mm
-//  NDAutolayoutUtil
+//  NSObject+NDAutolayoutUtils.mm
+//  NDAutolayoutUtils
 //
 //  Created by Nguyen Duc Hiep on 3/4/20.
 //  Copyright © 2020 Nguyen Duc Hiep. All rights reserved.
 //
 
-#import "NDAutolayoutUtil/NSObject+NDAutolayoutUtil.h"
+#import <NDAutolayoutUtils/NSObject+NDAutolayoutUtils.h>
 
 #import <objc/runtime.h>
 
-@implementation NSObject (NDAutolayoutUtil)
+@implementation NSObject (NDAutolayoutUtils)
 
 - (UILayoutGuide*)nd_leadingGuide {
   return GetGuide(self, @selector(nd_leadingGuide), NSLayoutAttributeTop,
