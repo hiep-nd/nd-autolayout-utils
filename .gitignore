@@ -1,4 +1,3 @@
 *~
 .DS_Store
-NDAutolayoutUtils.xcodeproj/project.xcworkspace/xcuserdata/**
-NDAutolayoutUtils.xcodeproj/xcuserdata/**
+**/xcuserdata/**

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "NDAutolayoutUtils"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "A small library for autolayout."
   s.description  = <<-DESC
   NDAutolayoutUtils is a small library for autolayout.
@@ -14,15 +14,8 @@ Pod::Spec.new do |s|
   s.requires_arc   = true
 #  s.source        = { :http => 'file:' + URI.escape(__dir__) + '/' }
   s.source       = { :git => "https://github.com/hiep-nd/nd-autolayout-utils.git", :tag => "Pod-#{s.version}" }
-  
-  s.default_subspecs = 'Core'
-  s.subspec 'Core' do |ss|
-    ss.source_files  = "NDAutolayoutUtils/Core/**/*.{h,m,mm}"
-    ss.public_header_files = 'NDAutolayoutUtils/Core/*.h'
-  end
 
-  s.subspec 'Swift' do |ss|
-    ss.dependency 'NDAutolayoutUtils/Core'
-    ss.source_files = 'NDAutolayoutUtils/Swift/**/*.{swift}'
-  end
+  s.source_files  = "NDAutolayoutUtils/**/*.{h,m,mm}"
+  s.public_header_files = 'NDAutolayoutUtils/*.h'
+  s.framework = 'UIKit'
 end
