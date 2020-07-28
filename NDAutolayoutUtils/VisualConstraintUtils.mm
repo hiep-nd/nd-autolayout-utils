@@ -9,7 +9,8 @@
 #import <NDAutolayoutUtils/VisualConstraintUtils.h>
 
 #import <NDAutolayoutUtils/ClassicalConstraintUtils.h>
-#import <NDAutolayoutUtils/NSObject+NDAutolayoutUtils.h>
+#import <NDAutolayoutUtils/NDCommonLayoutGuidesContainer.h>
+
 #import "Privates/NDContainerUtils.h"
 
 #import <map>
@@ -164,20 +165,19 @@ namespace {
 // clang-format off
 inline NSMutableDictionary<NSString*, id>* BuildGuideViews(
     NSArray* visualConstraints,
-    NSDictionary<NSString*, id>* views) {
+    NSDictionary<NSString*, id<NDCommonLayoutGuidesContainer>>* views) {
   NSMutableDictionary* extendedViews = [[NSMutableDictionary alloc] init];
-  [views enumerateKeysAndObjectsUsingBlock:^(NSString* name, NSObject* view,
-                                             BOOL*) {
-    static std::map<NSString*, UILayoutGuide* (^)(NSObject*)> guides({
-      { @"leading", ^(NSObject* obj){ return obj.nd_leadingGuide; } },
-      { @"trailing", ^(NSObject* obj){ return obj.nd_trailingGuide; } },
-      { @"left", ^(NSObject* obj){ return obj.nd_leftGuide; } },
-      { @"right", ^(NSObject* obj){ return obj.nd_rightGuide; } },
-      { @"top", ^(NSObject* obj){ return obj.nd_topGuide; } },
-      { @"bottom", ^(NSObject* obj){ return obj.nd_bottomGuide; } },
-      { @"center", ^(NSObject* obj){ return obj.nd_centerGuide; } },
+  [views enumerateKeysAndObjectsUsingBlock:^(NSString* name, id<NDCommonLayoutGuidesContainer> view, BOOL*) {
+    static std::map<NSString*, UILayoutGuide* (^)(id<NDCommonLayoutGuidesContainer>)> guides({
+      { @"leading", ^(id<NDCommonLayoutGuidesContainer> obj) { return obj.nd_leadingGuide; } },
+      { @"trailing", ^(id<NDCommonLayoutGuidesContainer> obj) { return obj.nd_trailingGuide; } },
+      { @"left", ^(id<NDCommonLayoutGuidesContainer> obj) { return obj.nd_leftGuide; } },
+      { @"right", ^(id<NDCommonLayoutGuidesContainer> obj) { return obj.nd_rightGuide; } },
+      { @"top", ^(id<NDCommonLayoutGuidesContainer> obj) { return obj.nd_topGuide; } },
+      { @"bottom", ^(id<NDCommonLayoutGuidesContainer> obj) { return obj.nd_bottomGuide; } },
+      { @"center", ^(id<NDCommonLayoutGuidesContainer> obj) { return obj.nd_centerGuide; } },
     });
-    
+
     for (auto& i : guides) {
       auto guideName = [NSString stringWithFormat:@"%@_%@", name, i.first];
       if (Contain(visualConstraints, ^BOOL(NSString* c) {
