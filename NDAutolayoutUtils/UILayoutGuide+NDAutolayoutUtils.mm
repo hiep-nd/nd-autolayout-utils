@@ -12,6 +12,6 @@
 
 @implementation UILayoutGuide (NDAutolayoutUtils)
 
-NDCommonLayoutGuidesContainer_Default_Impl
+NDCommonLayoutGuidesContainer_Default_Impl;
 
-    @end
+@end

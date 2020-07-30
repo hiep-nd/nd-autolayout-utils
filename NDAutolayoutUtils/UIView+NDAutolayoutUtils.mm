@@ -38,6 +38,6 @@ using namespace nd;
   ResetOwnerView(oldContainer, layoutGuide);
 }
 
-NDCommonLayoutGuidesContainer_Default_Impl
+NDCommonLayoutGuidesContainer_Default_Impl;
 
-    @end
+@end
