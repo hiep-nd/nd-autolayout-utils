@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DE5D64CDB575D0F788A4EB3 /* Pods_NDAutolayoutUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8AAE657934AFC836993E0B /* Pods_NDAutolayoutUtils.framework */; };
 		BA00195924BF0F6C000A3B1C /* UIView+NDAutolayoutUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BA00195724BF0F6C000A3B1C /* UIView+NDAutolayoutUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BA00195A24BF0F6C000A3B1C /* UIView+NDAutolayoutUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = BA00195824BF0F6C000A3B1C /* UIView+NDAutolayoutUtils.mm */; };
 		BA00195D24BF1164000A3B1C /* NDCommonLayoutGuidesContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = BA00195B24BF1164000A3B1C /* NDCommonLayoutGuidesContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -24,6 +25,9 @@
 		BA3E15962488A71A00FA0E33 /* VisualConstraintUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = BA3E158B2488A71A00FA0E33 /* VisualConstraintUtils.mm */; };
 		BA3E15972488A71A00FA0E33 /* ClassicalConstraintUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = BA3E158C2488A71A00FA0E33 /* ClassicalConstraintUtils.mm */; };
 		BA56479024A45FEE00ABCD10 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9CC95823F44CE2000DB5ED /* UIKit.framework */; };
+		BA634BBF24EA6DBA006567BB /* UIViewController+NDAutolayoutUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BA634BBD24EA6DBA006567BB /* UIViewController+NDAutolayoutUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA634BC024EA6DBA006567BB /* UIViewController+NDAutolayoutUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = BA634BBE24EA6DBA006567BB /* UIViewController+NDAutolayoutUtils.mm */; };
+		F00AD39D74D62A9D1DD487FF /* Pods_NDAutolayoutUtils_NDAutolayoutUtilsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954867E986135F25CED12D19 /* Pods_NDAutolayoutUtils_NDAutolayoutUtilsTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02CD94F2FD0CCE3AA561322B /* Pods-NDAutolayoutUtils-NDAutolayoutUtilsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NDAutolayoutUtils-NDAutolayoutUtilsTests.release.xcconfig"; path = "Target Support Files/Pods-NDAutolayoutUtils-NDAutolayoutUtilsTests/Pods-NDAutolayoutUtils-NDAutolayoutUtilsTests.release.xcconfig"; sourceTree = "<group>"; };
+		065BC1DD589726A78CBC7930 /* Pods-NDAutolayoutUtils-NDAutolayoutUtilsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NDAutolayoutUtils-NDAutolayoutUtilsTests.debug.xcconfig"; path = "Target Support Files/Pods-NDAutolayoutUtils-NDAutolayoutUtilsTests/Pods-NDAutolayoutUtils-NDAutolayoutUtilsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3A8AAE657934AFC836993E0B /* Pods_NDAutolayoutUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NDAutolayoutUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		954867E986135F25CED12D19 /* Pods_NDAutolayoutUtils_NDAutolayoutUtilsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NDAutolayoutUtils_NDAutolayoutUtilsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1857822BA3B7357B5997CCD /* Pods-NDAutolayoutUtils.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NDAutolayoutUtils.debug.xcconfig"; path = "Target Support Files/Pods-NDAutolayoutUtils/Pods-NDAutolayoutUtils.debug.xcconfig"; sourceTree = "<group>"; };
+		A8EE08BADB8FF67AB4C30BE7 /* Pods-NDAutolayoutUtils.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NDAutolayoutUtils.release.xcconfig"; path = "Target Support Files/Pods-NDAutolayoutUtils/Pods-NDAutolayoutUtils.release.xcconfig"; sourceTree = "<group>"; };
 		BA00195724BF0F6C000A3B1C /* UIView+NDAutolayoutUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+NDAutolayoutUtils.h"; sourceTree = "<group>"; };
 		BA00195824BF0F6C000A3B1C /* UIView+NDAutolayoutUtils.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIView+NDAutolayoutUtils.mm"; sourceTree = "<group>"; };
 		BA00195B24BF1164000A3B1C /* NDCommonLayoutGuidesContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NDCommonLayoutGuidesContainer.h; sourceTree = "<group>"; };
@@ -61,6 +71,8 @@
 		BA3E15892488A71A00FA0E33 /* NDAutolayoutUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDAutolayoutUtils.h; sourceTree = "<group>"; };
 		BA3E158B2488A71A00FA0E33 /* VisualConstraintUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VisualConstraintUtils.mm; sourceTree = "<group>"; };
 		BA3E158C2488A71A00FA0E33 /* ClassicalConstraintUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ClassicalConstraintUtils.mm; sourceTree = "<group>"; };
+		BA634BBD24EA6DBA006567BB /* UIViewController+NDAutolayoutUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NDAutolayoutUtils.h"; sourceTree = "<group>"; };
+		BA634BBE24EA6DBA006567BB /* UIViewController+NDAutolayoutUtils.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIViewController+NDAutolayoutUtils.mm"; sourceTree = "<group>"; };
 		BA9CC95823F44CE2000DB5ED /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BAECB99F248784D300FC2528 /* NDAutolayoutUtilsTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NDAutolayoutUtilsTests-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +83,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA3BFF4A2476623800A6AF13 /* UIKit.framework in Frameworks */,
+				3DE5D64CDB575D0F788A4EB3 /* Pods_NDAutolayoutUtils.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +93,7 @@
 			files = (
 				BA56479024A45FEE00ABCD10 /* UIKit.framework in Frameworks */,
 				BA1EFEAB23F30DDB0080A160 /* NDAutolayoutUtils.framework in Frameworks */,
+				F00AD39D74D62A9D1DD487FF /* Pods_NDAutolayoutUtils_NDAutolayoutUtilsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +113,7 @@
 				BA1EFEAE23F30DDB0080A160 /* NDAutolayoutUtilsTests */,
 				BA1EFEA223F30DDB0080A160 /* Products */,
 				BA9CC95723F44CE2000DB5ED /* Frameworks */,
+				E49C8CC2A5F7DD94C6C34088 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -125,6 +140,8 @@
 				BA1EFEA523F30DDB0080A160 /* Info.plist */,
 				BA00195724BF0F6C000A3B1C /* UIView+NDAutolayoutUtils.h */,
 				BA00195824BF0F6C000A3B1C /* UIView+NDAutolayoutUtils.mm */,
+				BA634BBD24EA6DBA006567BB /* UIViewController+NDAutolayoutUtils.h */,
+				BA634BBE24EA6DBA006567BB /* UIViewController+NDAutolayoutUtils.mm */,
 				BA00195B24BF1164000A3B1C /* NDCommonLayoutGuidesContainer.h */,
 				BA00195F24BF11C0000A3B1C /* UILayoutGuide+NDAutolayoutUtils.h */,
 				BA00196024BF11C0000A3B1C /* UILayoutGuide+NDAutolayoutUtils.mm */,
@@ -164,8 +181,21 @@
 			isa = PBXGroup;
 			children = (
 				BA9CC95823F44CE2000DB5ED /* UIKit.framework */,
+				3A8AAE657934AFC836993E0B /* Pods_NDAutolayoutUtils.framework */,
+				954867E986135F25CED12D19 /* Pods_NDAutolayoutUtils_NDAutolayoutUtilsTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E49C8CC2A5F7DD94C6C34088 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A1857822BA3B7357B5997CCD /* Pods-NDAutolayoutUtils.debug.xcconfig */,
+				A8EE08BADB8FF67AB4C30BE7 /* Pods-NDAutolayoutUtils.release.xcconfig */,
+				065BC1DD589726A78CBC7930 /* Pods-NDAutolayoutUtils-NDAutolayoutUtilsTests.debug.xcconfig */,
+				02CD94F2FD0CCE3AA561322B /* Pods-NDAutolayoutUtils-NDAutolayoutUtilsTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA3E158F2488A71A00FA0E33 /* VisualConstraintUtils.h in Headers */,
+				BA634BBF24EA6DBA006567BB /* UIViewController+NDAutolayoutUtils.h in Headers */,
 				BA00196524BF12B2000A3B1C /* NDCommonLayoutGuidesContainerUtils.h in Headers */,
 				BA00196124BF11C0000A3B1C /* UILayoutGuide+NDAutolayoutUtils.h in Headers */,
 				BA00195924BF0F6C000A3B1C /* UIView+NDAutolayoutUtils.h in Headers */,
@@ -193,6 +224,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA1EFEB523F30DDB0080A160 /* Build configuration list for PBXNativeTarget "NDAutolayoutUtils" */;
 			buildPhases = (
+				0EAFE0C194CD25676B3E73C0 /* [CP] Check Pods Manifest.lock */,
 				BA1EFE9C23F30DDB0080A160 /* Headers */,
 				BA1EFE9D23F30DDB0080A160 /* Sources */,
 				BA1EFE9E23F30DDB0080A160 /* Frameworks */,
@@ -211,9 +243,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA1EFEB823F30DDB0080A160 /* Build configuration list for PBXNativeTarget "NDAutolayoutUtilsTests" */;
 			buildPhases = (
+				8BEDFC53F7EB55FDB5F2766F /* [CP] Check Pods Manifest.lock */,
 				BA1EFEA623F30DDB0080A160 /* Sources */,
 				BA1EFEA723F30DDB0080A160 /* Frameworks */,
 				BA1EFEA823F30DDB0080A160 /* Resources */,
+				84F04CA07838BBD9652D89F0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -280,6 +314,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0EAFE0C194CD25676B3E73C0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NDAutolayoutUtils-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84F04CA07838BBD9652D89F0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NDAutolayoutUtils-NDAutolayoutUtilsTests/Pods-NDAutolayoutUtils-NDAutolayoutUtilsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NDAutolayoutUtils-NDAutolayoutUtilsTests/Pods-NDAutolayoutUtils-NDAutolayoutUtilsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NDAutolayoutUtils-NDAutolayoutUtilsTests/Pods-NDAutolayoutUtils-NDAutolayoutUtilsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8BEDFC53F7EB55FDB5F2766F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NDAutolayoutUtils-NDAutolayoutUtilsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BA1EFE9D23F30DDB0080A160 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -290,6 +388,7 @@
 				BA3E15962488A71A00FA0E33 /* VisualConstraintUtils.mm in Sources */,
 				BA3E15912488A71A00FA0E33 /* NDContainerUtils.mm in Sources */,
 				BA00195A24BF0F6C000A3B1C /* UIView+NDAutolayoutUtils.mm in Sources */,
+				BA634BC024EA6DBA006567BB /* UIViewController+NDAutolayoutUtils.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +532,7 @@
 		};
 		BA1EFEB623F30DDB0080A160 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1857822BA3B7357B5997CCD /* Pods-NDAutolayoutUtils.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -459,6 +559,7 @@
 		};
 		BA1EFEB723F30DDB0080A160 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8EE08BADB8FF67AB4C30BE7 /* Pods-NDAutolayoutUtils.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -484,6 +585,7 @@
 		};
 		BA1EFEB923F30DDB0080A160 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 065BC1DD589726A78CBC7930 /* Pods-NDAutolayoutUtils-NDAutolayoutUtilsTests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -505,6 +607,7 @@
 		};
 		BA1EFEBA23F30DDB0080A160 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02CD94F2FD0CCE3AA561322B /* Pods-NDAutolayoutUtils-NDAutolayoutUtilsTests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -18,4 +18,5 @@ FOUNDATION_EXPORT const unsigned char NDAutolayoutUtilsVersionString[];
 #import <NDAutolayoutUtils/NDCommonLayoutGuidesContainer.h>
 #import <NDAutolayoutUtils/UILayoutGuide+NDAutolayoutUtils.h>
 #import <NDAutolayoutUtils/UIView+NDAutolayoutUtils.h>
+#import <NDAutolayoutUtils/UIViewController+NDAutolayoutUtils.h>
 #import <NDAutolayoutUtils/VisualConstraintUtils.h>
