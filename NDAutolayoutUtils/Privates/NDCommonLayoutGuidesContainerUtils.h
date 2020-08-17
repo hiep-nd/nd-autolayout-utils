@@ -25,8 +25,13 @@ static std::vector<SEL> const kGuideKeys = {
 };
 }
 
-inline UILayoutGuide* PeekLayoutGuide(id self, const void* key) {
+template <typename T>
+inline T PeekProperty(id self, const void* key) {
   return objc_getAssociatedObject(self, key);
+}
+
+inline UILayoutGuide* PeekLayoutGuide(id self, const void* key) {
+  return PeekProperty<UILayoutGuide*>(self, key);
 }
 
 inline void SetLayoutGuide(id self, const void* key, UILayoutGuide* guide) {
@@ -131,6 +136,20 @@ inline NSLayoutConstraint* Anchor(id item1,
                                        constant:0];
 }
 
+inline NSLayoutConstraint* Anchor(id item1,
+                                  id item2,
+                                  NSLayoutAttribute attr1,
+                                  NSLayoutAttribute attr2,
+                                  CGFloat constant) {
+  return [NSLayoutConstraint constraintWithItem:item1
+                                      attribute:attr1
+                                      relatedBy:NSLayoutRelationEqual
+                                         toItem:item2
+                                      attribute:attr2
+                                     multiplier:1
+                                       constant:constant];
+}
+
 inline UIView* GetLayoutGuidesContainerView(UILayoutGuide* obj) {
   return obj.owningView;
 }
@@ -166,6 +185,29 @@ inline UILayoutGuide* GetGuide(T* _Nonnull obj,
 
   return guide;
 }
+
+template <typename T>
+inline void CreatePaddingObjects(T* _Nonnull obj) {
+  auto guide = [[UILayoutGuide alloc] init];
+  [GetLayoutGuidesContainerView(obj) addLayoutGuide:guide];
+  
+  auto topConstraint = Anchor(obj, guide, NSLayoutAttributeTop, NSLayoutAttributeTop)
+  auto bottomConstraint = Anchor(obj, guide, NSLayoutAttributeBottom, NSLayoutAttributeBottom)
+  auto leftConstraint = Anchor(obj, guide, NSLayoutAttributeLeft, NSLayoutAttributeTop)
+  auto rightConstraint = Anchor(obj, guide, NSLayoutAttributeTop, NSLayoutAttributeTop)
+  
+  Anchor(guide, obj, attrG1, attrO1)
+  
+  [NSLayoutConstraint activateConstraints:@[
+    Anchor(guide, obj, attrG1, attrO1),
+    Anchor(guide, obj, attrG2, attrO2),
+    Anchor(guide, obj, attrG3, attrO3),
+    Anchor(guide, obj, attrG4, attrO4),
+  ]];
+
+  SetLayoutGuide(obj, key, guide);
+}
+
 }
 
 #define NDCommonLayoutGuidesContainer_Default_Impl                             \
@@ -224,5 +266,58 @@ inline UILayoutGuide* GetGuide(T* _Nonnull obj,
                         NSLayoutAttributeCenterX, NSLayoutAttributeRight,      \
                         NSLayoutAttributeCenterX);                             \
   }
+
+- (NSLayoutConstraint *)nd_paddingTopConstraint {
+  return PeekProperty<NSLayoutConstraint *>(self, @selector(nd_paddingTopConstraint));
+}
+
+- (NSLayoutConstraint *)nd_paddingLeftConstraint {
+  return PeekProperty<NSLayoutConstraint *>(self, @selector(nd_paddingLeftConstraint));
+}
+
+- (NSLayoutConstraint *)nd_paddingBottomConstraint {
+  return PeekProperty<NSLayoutConstraint *>(self, @selector(nd_paddingBottomConstraint));
+}
+
+- (NSLayoutConstraint *)nd_paddingRightConstraint {
+  return PeekProperty<NSLayoutConstraint *>(self, @selector(nd_paddingRightConstraint));
+}
+
+- (UIEdgeInsets)nd_padding {
+  auto topConstraint = self.nd_paddingTopConstraint;
+  if (!topConstraint) {
+    [sel]
+  }
+  
+  return UIEdgeInsetsMake(self.nd_paddingTopConstraint.constant, self.nd_paddingLeftConstraint.constant, self.nd_paddingBottomConstraint.constant, self.nd_paddingRightConstraint.constant);
+}
+
+- (void)setNd_padding:(UIEdgeInsets)nd_padding {
+  
+}
+
+- (UILayoutGuide *)nd_paddingGuide {
+  auto guide = PeekLayoutGuide(obj, @selector(nd_paddingGuide));
+  if (!guide) {
+    guide = [[UILayoutGuide alloc] init];
+    [GetLayoutGuidesContainerView(obj) addLayoutGuide:guide];
+    Anchor(guide, obj, attrG1, attrO1)
+    
+    [NSLayoutConstraint activateConstraints:@[
+      Anchor(guide, obj, attrG1, attrO1),
+      Anchor(guide, obj, attrG2, attrO2),
+      Anchor(guide, obj, attrG3, attrO3),
+      Anchor(guide, obj, attrG4, attrO4),
+    ]];
+
+    SetLayoutGuide(obj, key, guide);
+  }
+
+  return guide;
+}
+
+@property(nonatomic, assign) UIEdgeInsets nd_padding;
+@property(nonatomic, strong, readonly) UILayoutGuide* nd_paddingGuide;
+
 
 NS_ASSUME_NONNULL_END

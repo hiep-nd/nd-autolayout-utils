@@ -20,6 +20,8 @@ NS_SWIFT_NAME(NDCommonLayoutGuidesContainerProtocol)
 @property(nonatomic, strong, readonly) UILayoutGuide* nd_topGuide;
 @property(nonatomic, strong, readonly) UILayoutGuide* nd_bottomGuide;
 @property(nonatomic, strong, readonly) UILayoutGuide* nd_centerGuide;
+@property(nonatomic, assign) UIEdgeInsets nd_padding;
+@property(nonatomic, strong, readonly) UILayoutGuide* nd_paddingGuide;
 
 @end
 
