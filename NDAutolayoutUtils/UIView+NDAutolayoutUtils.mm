@@ -81,8 +81,11 @@ inline void AddAndAnchor(UIView* container, T* anchor, UIView* contentView) {
   }
 
   [container nd_addSubviews:@[ contentView ]];
-  NDApplyVisualConstraints(@[ @"V:|[content]|", @"H:|[content]|" ],
-                           @{@"content" : contentView});
+  NDApplyVisualConstraints(@[ @"V:[anchor_top][content_top]",
+                              @"V:[anchor_bottom][content_bottom]",
+                              @"H:[anchor_left][content_left]",
+                              @"H:[anchor_right][content_right]",],
+                           @{@"content" : contentView, @"anchor" : anchor});
 }
 }
 
