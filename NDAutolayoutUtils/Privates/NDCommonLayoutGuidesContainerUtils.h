@@ -75,49 +75,6 @@ inline void SwizzleMethods(Class cls,
   }
 }
 
-/*
-inline void SwizzleLayoutContainerViewGetter() {
-  static dispatch_once_t onceToken;
-  dispatch_once(&onceToken, ^{
-    static std::vector<tuple<SEL, SEL>> sels = {
-      std::make_tuple(@selector(addLayoutGuide:),
-@selector(nd_swizzled_addLayoutGuide:)),
-      std::make_tuple(@selector(removeLayoutGuide:),
-@selector(nd_swizzled_removeLayoutGuide:)),
-      std::make_tuple(@selector(removeFromSuperview),
-@selector(nd_swizzled_removeFromSuperview)),
-      std::make_tuple(@selector(insertSubview:atIndex:),
-@selector(nd_swizzled_insertSubview:atIndex:)),
-      std::make_tuple(@selector(addSubview:),
-@selector(nd_swizzled_addSubview:)),
-      std::make_tuple(@selector(insertSubview:belowSubview:),
-@selector(nd_swizzled_insertSubview:belowSubview:)),
-      std::make_tuple(@selector(insertSubview:aboveSubview:),
-@selector(nd_swizzled_insertSubview:aboveSubview:)),
-    };
-
-    auto cls = [UIView class];
-    for (auto& sel: sels) {
-      auto originalMethod = class_getInstanceMethod(cls, get<0>(sel));
-      auto swizzledMethod = class_getInstanceMethod(cls, get<1>(sel));
-      BOOL didAddMethod =
-          class_addMethod(cls,
-                          get<0>(sel),
-              method_getImplementation(swizzledMethod),
-              method_getTypeEncoding(swizzledMethod));
-      if (didAddMethod) {
-          class_replaceMethod(cls,
-              get<1>(sel),
-              method_getImplementation(originalMethod),
-              method_getTypeEncoding(originalMethod));
-      } else {
-          method_exchangeImplementations(originalMethod, swizzledMethod);
-      }
-    }
-  });
-}
-*/
-
 inline NSLayoutConstraint* Anchor(id item1,
                                   id item2,
                                   NSLayoutAttribute attr1,

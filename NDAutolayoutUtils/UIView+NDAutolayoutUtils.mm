@@ -63,6 +63,13 @@ NDCommonLayoutGuidesContainer_Default_Impl;
   }
 }
 
+- (void)nd_addLayoutGuides:(NSArray<UILayoutGuide*>*)layoutGuides {
+  [layoutGuides
+      enumerateObjectsUsingBlock:^(UILayoutGuide* obj, NSUInteger, BOOL*) {
+        [self addLayoutGuide:obj];
+      }];
+}
+
 - (void)nd_fillWithContentView:(UIView*)contentView {
   AddAndAnchor(self, self, contentView);
 }
@@ -81,11 +88,12 @@ inline void AddAndAnchor(UIView* container, T* anchor, UIView* contentView) {
   }
 
   [container nd_addSubviews:@[ contentView ]];
-  NDApplyVisualConstraints(@[ @"V:[anchor_top][content_top]",
-                              @"V:[anchor_bottom][content_bottom]",
-                              @"H:[anchor_left][content_left]",
-                              @"H:[anchor_right][content_right]",],
-                           @{@"content" : contentView, @"anchor" : anchor});
+  [NSLayoutConstraint activateConstraints:@[
+    [anchor.topAnchor constraintEqualToAnchor:contentView.topAnchor],
+    [anchor.bottomAnchor constraintEqualToAnchor:contentView.bottomAnchor],
+    [anchor.leftAnchor constraintEqualToAnchor:contentView.leftAnchor],
+    [anchor.rightAnchor constraintEqualToAnchor:contentView.rightAnchor],
+  ]];
 }
 }
 

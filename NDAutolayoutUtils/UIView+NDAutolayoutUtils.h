@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
     translatesAutoresizingMaskIntoConstraints:
         (NSNumber* _Nullable)translatesAutoresizingMaskIntoConstraints
     NS_REFINED_FOR_SWIFT;
+- (void)nd_addLayoutGuides:(NSArray<UILayoutGuide*>*)layoutGuides
+    NS_SWIFT_NAME(nd_add(layoutGuides:));
 - (void)nd_fillWithContentView:(UIView*)contentView
     NS_SWIFT_NAME(nd_fill(with:));
 - (void)nd_fillMarginWithContentView:(UIView*)contentView

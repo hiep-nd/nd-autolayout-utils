@@ -11,11 +11,11 @@
 #import <NDAutolayoutUtils/ClassicalConstraintUtils.h>
 #import <NDAutolayoutUtils/NDCommonLayoutGuidesContainer.h>
 
-#import "Privates/NDContainerUtils.h"
+#import <NDUtils/NDUtils.h>
 
 #import <map>
 
-using namespace nd;
+using namespace nd::objc;
 
 void NDApplyVisualConstraints(NSArray<NSString*>* visualConstraints,
                               NSDictionary<NSString*, id>* views);

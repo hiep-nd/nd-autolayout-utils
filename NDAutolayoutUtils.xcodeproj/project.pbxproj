@@ -19,8 +19,6 @@
 		BA3BFF4A2476623800A6AF13 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9CC95823F44CE2000DB5ED /* UIKit.framework */; platformFilter = ios; };
 		BA3E158F2488A71A00FA0E33 /* VisualConstraintUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BA3E15832488A71A00FA0E33 /* VisualConstraintUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BA3E15902488A71A00FA0E33 /* ClassicalConstraintUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BA3E15842488A71A00FA0E33 /* ClassicalConstraintUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BA3E15912488A71A00FA0E33 /* NDContainerUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = BA3E15862488A71A00FA0E33 /* NDContainerUtils.mm */; };
-		BA3E15922488A71A00FA0E33 /* NDContainerUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BA3E15872488A71A00FA0E33 /* NDContainerUtils.h */; };
 		BA3E15942488A71A00FA0E33 /* NDAutolayoutUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BA3E15892488A71A00FA0E33 /* NDAutolayoutUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BA3E15962488A71A00FA0E33 /* VisualConstraintUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = BA3E158B2488A71A00FA0E33 /* VisualConstraintUtils.mm */; };
 		BA3E15972488A71A00FA0E33 /* ClassicalConstraintUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = BA3E158C2488A71A00FA0E33 /* ClassicalConstraintUtils.mm */; };
@@ -66,8 +64,6 @@
 		BA3BFF422475376600A6AF13 /* NDAutolayoutUtils.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = NDAutolayoutUtils.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BA3E15832488A71A00FA0E33 /* VisualConstraintUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisualConstraintUtils.h; sourceTree = "<group>"; };
 		BA3E15842488A71A00FA0E33 /* ClassicalConstraintUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassicalConstraintUtils.h; sourceTree = "<group>"; };
-		BA3E15862488A71A00FA0E33 /* NDContainerUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NDContainerUtils.mm; sourceTree = "<group>"; };
-		BA3E15872488A71A00FA0E33 /* NDContainerUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDContainerUtils.h; sourceTree = "<group>"; };
 		BA3E15892488A71A00FA0E33 /* NDAutolayoutUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDAutolayoutUtils.h; sourceTree = "<group>"; };
 		BA3E158B2488A71A00FA0E33 /* VisualConstraintUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VisualConstraintUtils.mm; sourceTree = "<group>"; };
 		BA3E158C2488A71A00FA0E33 /* ClassicalConstraintUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ClassicalConstraintUtils.mm; sourceTree = "<group>"; };
@@ -169,8 +165,6 @@
 		BA3E15852488A71A00FA0E33 /* Privates */ = {
 			isa = PBXGroup;
 			children = (
-				BA3E15862488A71A00FA0E33 /* NDContainerUtils.mm */,
-				BA3E15872488A71A00FA0E33 /* NDContainerUtils.h */,
 				BA00196324BF12B2000A3B1C /* NDCommonLayoutGuidesContainerUtils.h */,
 				BA00196424BF12B2000A3B1C /* NDCommonLayoutGuidesContainerUtils.mm */,
 			);
@@ -211,7 +205,6 @@
 				BA00196124BF11C0000A3B1C /* UILayoutGuide+NDAutolayoutUtils.h in Headers */,
 				BA00195924BF0F6C000A3B1C /* UIView+NDAutolayoutUtils.h in Headers */,
 				BA00195D24BF1164000A3B1C /* NDCommonLayoutGuidesContainer.h in Headers */,
-				BA3E15922488A71A00FA0E33 /* NDContainerUtils.h in Headers */,
 				BA3E15902488A71A00FA0E33 /* ClassicalConstraintUtils.h in Headers */,
 				BA3E15942488A71A00FA0E33 /* NDAutolayoutUtils.h in Headers */,
 			);
@@ -386,7 +379,6 @@
 				BA00196624BF12B2000A3B1C /* NDCommonLayoutGuidesContainerUtils.mm in Sources */,
 				BA3E15972488A71A00FA0E33 /* ClassicalConstraintUtils.mm in Sources */,
 				BA3E15962488A71A00FA0E33 /* VisualConstraintUtils.mm in Sources */,
-				BA3E15912488A71A00FA0E33 /* NDContainerUtils.mm in Sources */,
 				BA00195A24BF0F6C000A3B1C /* UIView+NDAutolayoutUtils.mm in Sources */,
 				BA634BC024EA6DBA006567BB /* UIViewController+NDAutolayoutUtils.mm in Sources */,
 			);
