@@ -7,7 +7,7 @@ target 'NDAutolayoutUtils' do
 
   # Pods for NDAutolayoutUtils
   pod 'NDLog', :path => '../NDLog'
-  pod 'NDUtils', :path => '../NDUtils'
+  pod 'NDUtils/Foundation', :path => '../NDUtils'
 
   target 'NDAutolayoutUtilsTests' do
     # Pods for testing

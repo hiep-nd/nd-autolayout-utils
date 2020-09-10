@@ -1,11 +1,13 @@
 PODS:
-  - NDLog (0.0.4)
-  - NDUtils (0.0.4):
-    - NDLog (~> 0.0.4)
+  - NDLog (0.0.5)
+  - NDUtils/Core (0.0.4)
+  - NDUtils/Foundation (0.0.4):
+    - NDLog (~> 0.0.5)
+    - NDUtils/Core
 
 DEPENDENCIES:
   - NDLog (from `../NDLog`)
-  - NDUtils (from `../NDUtils`)
+  - NDUtils/Foundation (from `../NDUtils`)
 
 EXTERNAL SOURCES:
   NDLog:
@@ -14,9 +16,9 @@ EXTERNAL SOURCES:
     :path: "../NDUtils"
 
 SPEC CHECKSUMS:
-  NDLog: f84c4c42520a954db34fa487d88a9bcc2ee0100b
-  NDUtils: 32f9200027bfcca07408bee77fdaad1711422b1f
+  NDLog: 2d478a5bc74f17ee56fea08adb6dacdaa36a07e6
+  NDUtils: e44d6272ae161c0a03689d1b8b4359a82ba716ef
 
-PODFILE CHECKSUM: bbc8f96664718687e18156be3cf2a354cceec3ca
+PODFILE CHECKSUM: fc3e15619987ec4c64a3801ab429d84e018d386e
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3

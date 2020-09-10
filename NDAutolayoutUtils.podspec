@@ -19,6 +19,6 @@ Pod::Spec.new do |s|
   s.public_header_files = 'NDAutolayoutUtils/*.h'
   s.framework = 'UIKit'
   
-  s.dependency 'NDLog', '~> 0.0.4'
-  s.dependency 'NDUtils', '~> 0.0.4'
+  s.dependency 'NDLog', '~> 0.0.5'
+  s.dependency 'NDUtils/Foundation', '~> 0.0.4'
 end

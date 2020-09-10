@@ -100,11 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				BA3BFF3D2475369B00A6AF13 /* Config */,
-				BA3BFF40247536AD00A6AF13 /* .swift-format */,
-				BA3BFF3E247536AC00A6AF13 /* .swiftlint.yml */,
-				BA3BFF41247536AD00A6AF13 /* LICENSE */,
-				BA3BFF422475376600A6AF13 /* NDAutolayoutUtils.podspec */,
-				BA3BFF3F247536AC00A6AF13 /* README.md */,
 				BA1EFEA323F30DDB0080A160 /* NDAutolayoutUtils */,
 				BA1EFEAE23F30DDB0080A160 /* NDAutolayoutUtilsTests */,
 				BA1EFEA223F30DDB0080A160 /* Products */,
@@ -158,6 +153,11 @@
 		BA3BFF3D2475369B00A6AF13 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				BA3BFF40247536AD00A6AF13 /* .swift-format */,
+				BA3BFF3E247536AC00A6AF13 /* .swiftlint.yml */,
+				BA3BFF41247536AD00A6AF13 /* LICENSE */,
+				BA3BFF422475376600A6AF13 /* NDAutolayoutUtils.podspec */,
+				BA3BFF3F247536AC00A6AF13 /* README.md */,
 			);
 			name = Config;
 			sourceTree = "<group>";
@@ -240,7 +240,7 @@
 				BA1EFEA623F30DDB0080A160 /* Sources */,
 				BA1EFEA723F30DDB0080A160 /* Frameworks */,
 				BA1EFEA823F30DDB0080A160 /* Resources */,
-				84F04CA07838BBD9652D89F0 /* [CP] Embed Pods Frameworks */,
+				82C59D3B225430D314E9996F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -330,7 +330,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		84F04CA07838BBD9652D89F0 /* [CP] Embed Pods Frameworks */ = {
+		82C59D3B225430D314E9996F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
