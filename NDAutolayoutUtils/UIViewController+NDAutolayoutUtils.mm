@@ -8,7 +8,8 @@
 
 #import <NDAutolayoutUtils/UIViewController+NDAutolayoutUtils.h>
 
-#import <NDAutolayoutUtils/VisualConstraintUtils.h>
+#import <NDAutolayoutUtils/NDVisualConstraintUtils.h>
+#import <NDAutolayoutUtils/UIView+NDAutolayoutUtils.h>
 #import <NDLog/NDLog.h>
 
 @implementation UIViewController (NDAutolayoutUtils)

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "NDAutolayoutUtils"
-  s.version      = "0.0.5"
+  s.version      = "0.0.6"
   s.summary      = "A small library for autolayout."
   s.description  = <<-DESC
   NDAutolayoutUtils is a small library for autolayout.

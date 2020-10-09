@@ -1,5 +1,5 @@
 //
-//  NDCommonLayoutGuidesContainerUtils.h
+//  NDNSLayoutConstraintItemUtils.h
 //  NDAutolayoutUtils
 //
 //  Created by Nguyen Duc Hiep on 7/15/20.
@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-#import <NDAutolayoutUtils/NDCommonLayoutGuidesContainer.h>
+#import <NDAutolayoutUtils/NDNSLayoutConstraintItem.h>
+#import <NDAutolayoutUtils/UIView+NDAutolayoutUtils.h>
 
 #import <objc/runtime.h>
 #import <vector>
@@ -16,7 +17,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 namespace nd {
-namespace NDCommonLayoutGuidesContainer {
+namespace autolayout {
+namespace NDNSLayoutConstraintItem {
 static std::vector<SEL> const kGuideKeys = {
     @selector(nd_leadingGuide), @selector(nd_trailingGuide),
     @selector(nd_leftGuide),    @selector(nd_rightGuide),
@@ -25,11 +27,14 @@ static std::vector<SEL> const kGuideKeys = {
 };
 }
 
-inline UILayoutGuide* PeekLayoutGuide(id self, const void* key) {
+inline UILayoutGuide* PeekLayoutGuide(id<NDNSLayoutConstraintItem> self,
+                                      const void* key) {
   return objc_getAssociatedObject(self, key);
 }
 
-inline void SetLayoutGuide(id self, const void* key, UILayoutGuide* guide) {
+inline void SetLayoutGuide(id<NDNSLayoutConstraintItem> self,
+                           const void* key,
+                           UILayoutGuide* guide) {
   objc_setAssociatedObject(self, key, guide, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
@@ -37,7 +42,7 @@ inline void SetOwnerView(UIView* oldOwnerView,
                          UIView* ownerView,
                          UILayoutGuide* layoutGuide) {
   if (oldOwnerView != ownerView) {
-    for (auto& key : NDCommonLayoutGuidesContainer::kGuideKeys) {
+    for (auto& key : NDNSLayoutConstraintItem::kGuideKeys) {
       auto guide = PeekLayoutGuide(layoutGuide, key);
       if (guide) {
         [ownerView addLayoutGuide:guide];
@@ -48,7 +53,7 @@ inline void SetOwnerView(UIView* oldOwnerView,
 
 inline void ResetOwnerView(UIView* oldOwnerView, UILayoutGuide* layoutGuide) {
   if (oldOwnerView != nil) {
-    for (auto& key : NDCommonLayoutGuidesContainer::kGuideKeys) {
+    for (auto& key : NDNSLayoutConstraintItem::kGuideKeys) {
       auto guide = PeekLayoutGuide(layoutGuide, key);
       if (guide) {
         [oldOwnerView removeLayoutGuide:guide];
@@ -75,8 +80,8 @@ inline void SwizzleMethods(Class cls,
   }
 }
 
-inline NSLayoutConstraint* Anchor(id item1,
-                                  id item2,
+inline NSLayoutConstraint* Anchor(id<NDNSLayoutConstraintItem> item1,
+                                  id<NDNSLayoutConstraintItem> item2,
                                   NSLayoutAttribute attr1,
                                   NSLayoutAttribute attr2) {
   return [NSLayoutConstraint constraintWithItem:item1
@@ -124,62 +129,67 @@ inline UILayoutGuide* GetGuide(T* _Nonnull obj,
   return guide;
 }
 }
+}
 
-#define NDCommonLayoutGuidesContainer_Default_Impl                             \
+#define NDNSLayoutConstraintItem_LayoutGuides_Default_Impl                     \
   -(UILayoutGuide*)nd_leadingGuide {                                           \
-    return nd::GetGuide(self, @selector(nd_leadingGuide),                      \
-                        NSLayoutAttributeTop, NSLayoutAttributeTop,            \
-                        NSLayoutAttributeBottom, NSLayoutAttributeBottom,      \
-                        NSLayoutAttributeLeading, NSLayoutAttributeLeading,    \
-                        NSLayoutAttributeTrailing, NSLayoutAttributeLeading);  \
+    return nd::autolayout::GetGuide(                                           \
+        self, @selector(nd_leadingGuide), NSLayoutAttributeTop,                \
+        NSLayoutAttributeTop, NSLayoutAttributeBottom,                         \
+        NSLayoutAttributeBottom, NSLayoutAttributeLeading,                     \
+        NSLayoutAttributeLeading, NSLayoutAttributeTrailing,                   \
+        NSLayoutAttributeLeading);                                             \
   }                                                                            \
                                                                                \
   -(UILayoutGuide*)nd_trailingGuide {                                          \
-    return nd::GetGuide(self, @selector(nd_trailingGuide),                     \
-                        NSLayoutAttributeTop, NSLayoutAttributeTop,            \
-                        NSLayoutAttributeBottom, NSLayoutAttributeBottom,      \
-                        NSLayoutAttributeLeading, NSLayoutAttributeTrailing,   \
-                        NSLayoutAttributeTrailing, NSLayoutAttributeTrailing); \
+    return nd::autolayout::GetGuide(                                           \
+        self, @selector(nd_trailingGuide), NSLayoutAttributeTop,               \
+        NSLayoutAttributeTop, NSLayoutAttributeBottom,                         \
+        NSLayoutAttributeBottom, NSLayoutAttributeLeading,                     \
+        NSLayoutAttributeTrailing, NSLayoutAttributeTrailing,                  \
+        NSLayoutAttributeTrailing);                                            \
   }                                                                            \
                                                                                \
   -(UILayoutGuide*)nd_leftGuide {                                              \
-    return nd::GetGuide(self, @selector(nd_leftGuide), NSLayoutAttributeTop,   \
-                        NSLayoutAttributeTop, NSLayoutAttributeBottom,         \
-                        NSLayoutAttributeBottom, NSLayoutAttributeLeft,        \
-                        NSLayoutAttributeLeft, NSLayoutAttributeRight,         \
-                        NSLayoutAttributeLeft);                                \
+    return nd::autolayout::GetGuide(                                           \
+        self, @selector(nd_leftGuide), NSLayoutAttributeTop,                   \
+        NSLayoutAttributeTop, NSLayoutAttributeBottom,                         \
+        NSLayoutAttributeBottom, NSLayoutAttributeLeft, NSLayoutAttributeLeft, \
+        NSLayoutAttributeRight, NSLayoutAttributeLeft);                        \
   }                                                                            \
                                                                                \
   -(UILayoutGuide*)nd_rightGuide {                                             \
-    return nd::GetGuide(self, @selector(nd_rightGuide), NSLayoutAttributeTop,  \
-                        NSLayoutAttributeTop, NSLayoutAttributeBottom,         \
-                        NSLayoutAttributeBottom, NSLayoutAttributeLeft,        \
-                        NSLayoutAttributeRight, NSLayoutAttributeRight,        \
-                        NSLayoutAttributeRight);                               \
+    return nd::autolayout::GetGuide(                                           \
+        self, @selector(nd_rightGuide), NSLayoutAttributeTop,                  \
+        NSLayoutAttributeTop, NSLayoutAttributeBottom,                         \
+        NSLayoutAttributeBottom, NSLayoutAttributeLeft,                        \
+        NSLayoutAttributeRight, NSLayoutAttributeRight,                        \
+        NSLayoutAttributeRight);                                               \
   }                                                                            \
                                                                                \
   -(UILayoutGuide*)nd_topGuide {                                               \
-    return nd::GetGuide(self, @selector(nd_topGuide), NSLayoutAttributeTop,    \
-                        NSLayoutAttributeTop, NSLayoutAttributeBottom,         \
-                        NSLayoutAttributeTop, NSLayoutAttributeLeft,           \
-                        NSLayoutAttributeLeft, NSLayoutAttributeRight,         \
-                        NSLayoutAttributeRight);                               \
+    return nd::autolayout::GetGuide(                                           \
+        self, @selector(nd_topGuide), NSLayoutAttributeTop,                    \
+        NSLayoutAttributeTop, NSLayoutAttributeBottom, NSLayoutAttributeTop,   \
+        NSLayoutAttributeLeft, NSLayoutAttributeLeft, NSLayoutAttributeRight,  \
+        NSLayoutAttributeRight);                                               \
   }                                                                            \
                                                                                \
   -(UILayoutGuide*)nd_bottomGuide {                                            \
-    return nd::GetGuide(self, @selector(nd_bottomGuide), NSLayoutAttributeTop, \
-                        NSLayoutAttributeBottom, NSLayoutAttributeBottom,      \
-                        NSLayoutAttributeBottom, NSLayoutAttributeLeft,        \
-                        NSLayoutAttributeLeft, NSLayoutAttributeRight,         \
-                        NSLayoutAttributeRight);                               \
+    return nd::autolayout::GetGuide(                                           \
+        self, @selector(nd_bottomGuide), NSLayoutAttributeTop,                 \
+        NSLayoutAttributeBottom, NSLayoutAttributeBottom,                      \
+        NSLayoutAttributeBottom, NSLayoutAttributeLeft, NSLayoutAttributeLeft, \
+        NSLayoutAttributeRight, NSLayoutAttributeRight);                       \
   }                                                                            \
                                                                                \
   -(UILayoutGuide*)nd_centerGuide {                                            \
-    return nd::GetGuide(self, @selector(nd_centerGuide), NSLayoutAttributeTop, \
-                        NSLayoutAttributeCenterY, NSLayoutAttributeBottom,     \
-                        NSLayoutAttributeCenterY, NSLayoutAttributeLeft,       \
-                        NSLayoutAttributeCenterX, NSLayoutAttributeRight,      \
-                        NSLayoutAttributeCenterX);                             \
+    return nd::autolayout::GetGuide(                                           \
+        self, @selector(nd_centerGuide), NSLayoutAttributeTop,                 \
+        NSLayoutAttributeCenterY, NSLayoutAttributeBottom,                     \
+        NSLayoutAttributeCenterY, NSLayoutAttributeLeft,                       \
+        NSLayoutAttributeCenterX, NSLayoutAttributeRight,                      \
+        NSLayoutAttributeCenterX);                                             \
   }
 
 NS_ASSUME_NONNULL_END

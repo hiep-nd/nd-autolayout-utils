@@ -14,9 +14,9 @@ FOUNDATION_EXPORT double NDAutolayoutUtilsVersionNumber;
 //! Project version string for NDAutolayoutUtils.
 FOUNDATION_EXPORT const unsigned char NDAutolayoutUtilsVersionString[];
 
-#import <NDAutolayoutUtils/ClassicalConstraintUtils.h>
-#import <NDAutolayoutUtils/NDCommonLayoutGuidesContainer.h>
-#import <NDAutolayoutUtils/UILayoutGuide+NDAutolayoutUtils.h>
+#import <NDAutolayoutUtils/NDClassicalConstraintUtils.h>
+#import <NDAutolayoutUtils/NDNSLayoutConstraintItem.h>
+#import <NDAutolayoutUtils/NDVisualConstraintUtils.h>
+#import <NDAutolayoutUtils/UITableViewCell+NDAutolayoutUtils.h>
 #import <NDAutolayoutUtils/UIView+NDAutolayoutUtils.h>
 #import <NDAutolayoutUtils/UIViewController+NDAutolayoutUtils.h>
-#import <NDAutolayoutUtils/VisualConstraintUtils.h>
