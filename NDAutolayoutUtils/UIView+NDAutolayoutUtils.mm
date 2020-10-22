@@ -115,14 +115,16 @@ inline void AddAndAnchor(UIView* container, T* anchor, UIView* contentView) {
   }];
 
   NSMutableDictionary* extendeds = nil;
-  if (@available(iOS 11, *)) {
-    if (!items[@"safeArea"]) {
+  if (!items[@"safeArea"]) {
+    if (@available(iOS 11, *)) {
       Extend(extendeds, @"safeArea", self.safeAreaLayoutGuide);
+    } else {
+      Extend(extendeds, @"safeArea", self);
     }
   }
 
-  if (!items[@"container"]) {
-    Extend(extendeds, @"container", self);
+  if (!items[@"wrapper"]) {
+    Extend(extendeds, @"wrapper", self);
   }
 
   if (extendeds) {

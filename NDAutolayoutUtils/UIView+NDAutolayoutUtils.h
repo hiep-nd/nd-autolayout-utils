@@ -45,6 +45,10 @@ NS_ASSUME_NONNULL_BEGIN
           visualConstraints:(NSArray<NSString*>*)visualConstraints
     NS_SWIFT_NAME(nd_wrap(item:visualConstraints:));
 
+/// Wrap items in |items| with |visualConstraints|. Auto add item |safeArea| and
+/// |wrapper|.
+/// @param items The items.
+/// @param visualConstraints The visual constraints.
 - (instancetype)nd_wrapItems:
                     (NSDictionary<NSString*, id<NDNSLayoutConstraintItem>>*)
                         items
