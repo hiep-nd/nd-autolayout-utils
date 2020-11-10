@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "NDAutolayoutUtils"
-  s.version      = "0.0.6.1"
+  s.version      = "0.0.7"
   s.summary      = "A small library for autolayout."
   s.description  = <<-DESC
   NDAutolayoutUtils is a small library for autolayout.
@@ -15,10 +15,22 @@ Pod::Spec.new do |s|
 #  s.source        = { :http => 'file:' + URI.escape(__dir__) + '/' }
   s.source       = { :git => "https://github.com/hiep-nd/nd-autolayout-utils.git", :tag => "Pod-#{s.version}" }
 
-  s.source_files  = "NDAutolayoutUtils/**/*.{h,m,mm}"
-  s.public_header_files = 'NDAutolayoutUtils/*.h'
-  s.framework = 'UIKit'
-  
-  s.dependency 'NDLog', '~> 0.0.5'
-  s.dependency 'NDUtils/Foundation', '~> 0.0.4'
+  s.subspec 'Core' do |ss|
+    ss.source_files  = "Sources/Core/*.{h,m,mm,swift}", "Sources/Core/Privates/*.{h,m,mm,swift}"
+    ss.private_header_files = "Sources/Core/Privates/*.h"
+    ss.framework = 'UIKit'
+    ss.dependency 'NDLog', '~> 0.0.6'
+    ss.dependency 'NDUtils/Foundation', '~> 0.0.5'
+  end
+
+  s.subspec 'ObjC' do |ss|
+    ss.dependency 'NDAutolayoutUtils/Core'
+  end
+
+  s.subspec 'Swift' do |ss|
+    ss.source_files  = "Sources/Swift/*.{h,m,mm,swift}"
+    ss.dependency 'NDAutolayoutUtils/Core'
+  end
+
+  s.default_subspec = 'Swift'
 end

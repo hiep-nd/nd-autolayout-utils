@@ -1,24 +1,39 @@
 PODS:
-  - NDLog (0.0.5)
-  - NDUtils/Core (0.0.4)
-  - NDUtils/Foundation (0.0.4):
-    - NDLog (~> 0.0.5)
+  - NDAutolayoutUtils (0.0.7):
+    - NDAutolayoutUtils/Swift (= 0.0.7)
+  - NDAutolayoutUtils/Core (0.0.7):
+    - NDLog (~> 0.0.6)
+    - NDUtils/Foundation (~> 0.0.5)
+  - NDAutolayoutUtils/Swift (0.0.7):
+    - NDAutolayoutUtils/Core
+  - NDLog (0.0.6.1):
+    - NDLog/Swift (= 0.0.6.1)
+  - NDLog/Core (0.0.6.1)
+  - NDLog/Swift (0.0.6.1):
+    - NDLog/Core
+  - NDUtils/Core (0.0.5)
+  - NDUtils/Foundation (0.0.5):
+    - NDLog (~> 0.0.6)
     - NDUtils/Core
 
 DEPENDENCIES:
+  - NDAutolayoutUtils (from `.`)
   - NDLog (from `../NDLog`)
   - NDUtils/Foundation (from `../NDUtils`)
 
 EXTERNAL SOURCES:
+  NDAutolayoutUtils:
+    :path: "."
   NDLog:
     :path: "../NDLog"
   NDUtils:
     :path: "../NDUtils"
 
 SPEC CHECKSUMS:
-  NDLog: 2d478a5bc74f17ee56fea08adb6dacdaa36a07e6
-  NDUtils: e44d6272ae161c0a03689d1b8b4359a82ba716ef
+  NDAutolayoutUtils: 82fc48d4cba9e7a0d1dfce819cc36e74ed60514d
+  NDLog: 1e996efb979679f547dcf729a955fe92577ed2c5
+  NDUtils: 1a72e3cfd4f1510b261999c0f26f17648c033ac9
 
-PODFILE CHECKSUM: fc3e15619987ec4c64a3801ab429d84e018d386e
+PODFILE CHECKSUM: 2a6d41c760cb97db69d1e53a1d1a1a0e8758fb6f
 
 COCOAPODS: 1.9.3
