@@ -10,8 +10,8 @@ target 'Samples' do
   # Pods for Samples
   pod 'NDAutolayoutUtils', :path => '.'
 
-  pod 'NDLog', :path => '../NDLog'
-  pod 'NDUtils/Foundation', :path => '../NDUtils'
+#  pod 'NDLog', :path => '../NDLog'
+#  pod 'NDUtils/Foundation', :path => '../NDUtils'
 
   target 'SamplesTests' do
     # Pods for testing

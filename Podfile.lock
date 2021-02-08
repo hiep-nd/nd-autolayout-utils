@@ -1,39 +1,49 @@
 PODS:
-  - NDAutolayoutUtils (0.0.7):
-    - NDAutolayoutUtils/Swift (= 0.0.7)
-  - NDAutolayoutUtils/Core (0.0.7):
-    - NDLog (~> 0.0.6)
-    - NDUtils/Foundation (~> 0.0.5)
-  - NDAutolayoutUtils/Swift (0.0.7):
+  - NDAutolayoutUtils (1.0):
+    - NDAutolayoutUtils/Swift (= 1.0)
+  - NDAutolayoutUtils/Core (1.0):
+    - NDLog (~> 1.0)
+    - NDUtils/Foundation (~> 1.0)
+  - NDAutolayoutUtils/Swift (1.0):
     - NDAutolayoutUtils/Core
-  - NDLog (0.0.6.1):
-    - NDLog/Swift (= 0.0.6.1)
-  - NDLog/Core (0.0.6.1)
-  - NDLog/Swift (0.0.6.1):
-    - NDLog/Core
-  - NDUtils/Core (0.0.5)
-  - NDUtils/Foundation (0.0.5):
-    - NDLog (~> 0.0.6)
-    - NDUtils/Core
+  - NDLog (1.0):
+    - NDLog/Swift (= 1.0)
+  - NDLog/Core_ObjC (1.0)
+  - NDLog/Core_Swift (1.0):
+    - NDLog/Core_ObjC
+  - NDLog/ObjC (1.0):
+    - NDLog/Core_ObjC
+  - NDLog/Swift (1.0):
+    - NDLog/Core_Swift
+  - NDUtils/Core_ObjC (1.0)
+  - NDUtils/Foundation (1.0):
+    - NDUtils/Foundation_Swift
+  - NDUtils/Foundation_ObjC (1.0):
+    - NDLog/ObjC (~> 1.0)
+    - NDUtils/objc_ObjC
+  - NDUtils/Foundation_Swift (1.0):
+    - NDUtils/Foundation_ObjC
+  - NDUtils/objc_ObjC (1.0):
+    - NDLog/ObjC (~> 1.0)
+    - NDUtils/Core_ObjC
 
 DEPENDENCIES:
   - NDAutolayoutUtils (from `.`)
-  - NDLog (from `../NDLog`)
-  - NDUtils/Foundation (from `../NDUtils`)
+
+SPEC REPOS:
+  trunk:
+    - NDLog
+    - NDUtils
 
 EXTERNAL SOURCES:
   NDAutolayoutUtils:
     :path: "."
-  NDLog:
-    :path: "../NDLog"
-  NDUtils:
-    :path: "../NDUtils"
 
 SPEC CHECKSUMS:
-  NDAutolayoutUtils: 82fc48d4cba9e7a0d1dfce819cc36e74ed60514d
-  NDLog: 1e996efb979679f547dcf729a955fe92577ed2c5
-  NDUtils: 1a72e3cfd4f1510b261999c0f26f17648c033ac9
+  NDAutolayoutUtils: 5f95bc90b92a5e90e7331672af0489872d57a77f
+  NDLog: 81509c11e58a8143df72d3793a79d436f6e2d6d8
+  NDUtils: 88150120d1391b58493e5245019e4ad6224c1362
 
-PODFILE CHECKSUM: 2a6d41c760cb97db69d1e53a1d1a1a0e8758fb6f
+PODFILE CHECKSUM: 207a5a3aedb6856a169af8285c2f91ccc98e2077
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1
